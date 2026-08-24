@@ -20,12 +20,4 @@ for items in reader:
         quantity = 0
 
     
-    total = price * quantity
-
-    if vendor not in total_sales:
-        total_sales[vendor] = 0
-
-    total_sales[vendor] += total
-
-for vendor, sales in sorted(total_sales.items(), key=lambda x: x[1], reverse=True):
-    print(vendor, sales)
+    
