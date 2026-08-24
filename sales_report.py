@@ -1,10 +1,9 @@
 import csv
 
-file = open("data.csv")
+file = open("data.csv","r")
 
 reader = csv.reader(file)
 next(reader)
-
 total_sales = {}
 
 for items in reader:
@@ -28,5 +27,5 @@ for items in reader:
 
     total_sales[vendor] += total
 
-for vendor in total_sales:
-    print(vendor,total_sales[vendor])
+for vendor, sales in sorted(total_sales.items(), key=lambda x: x[1], reverse=True):
+    print(vendor, sales)
